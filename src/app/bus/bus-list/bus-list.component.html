@@ -1,0 +1,98 @@
+<div class="liste">
+<div class="search-div">
+    <button mat-raised-button (click)="onCreate()" class="button-create">
+        <mat-icon>add</mat-icon> Ajouter
+    </button>
+    
+    <mat-form-field class="search-form-field" floatLabel="never">
+<input matInput [(ngModel)]="searchkey" placeholder="Chercher" autocomplete="off" (keyup)="applyFilter()">
+<button mat-button matSuffix mat-icon-button aria-label="Clear"*ngIf="searchkey" (click)="onSearchClear()">
+    <mat-icon>close</mat-icon>
+</button>
+    </mat-form-field>
+</div>
+<div class="mat-elevation-z8" >
+    <mat-table [dataSource]="listData" class="table">
+        <ng-container matColumnDef="numS">
+            <mat-header-cell *matHeaderCellDef>Matricule bus</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.numS}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="marque">
+            <mat-header-cell *matHeaderCellDef>Marque</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.marque}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="modele">
+            <mat-header-cell *matHeaderCellDef>Modèle</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.modele}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="nbrVoy">
+            <mat-header-cell *matHeaderCellDef>Nombre des voyages</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.nbrVoy}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="nbrP">
+            <mat-header-cell *matHeaderCellDef>Nombre des places </mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.nbrP}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="dateMiseS">
+            <mat-header-cell *matHeaderCellDef>Date mise en service</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.dateMiseS | date: 'yyyy-MM-dd'}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="statut">
+            <mat-header-cell *matHeaderCellDef>Statut</mat-header-cell>
+            <mat-cell *matCellDef="let element">
+                <div *ngIf=" element.statut ; then validCondition else nonValidCondition"></div>
+                <ng-template #validCondition>En marche</ng-template>
+                <ng-template #nonValidCondition>En panne</ng-template>   
+            </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="disPar">
+            <mat-header-cell *matHeaderCellDef>Distance parcourue</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.disPar}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="voyAc">
+            <mat-header-cell *matHeaderCellDef>Voyage active</mat-header-cell>
+            <mat-cell *matCellDef="let element">
+                <div *ngIf=" element.voyAc ; then validCondition else nonValidCondition"></div>
+                <ng-template #validCondition>Oui</ng-template>
+                <ng-template #nonValidCondition>Non</ng-template>
+            </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="wifi">
+            <mat-header-cell *matHeaderCellDef>Wifi</mat-header-cell>
+            <mat-cell *matCellDef="let element">
+                <div *ngIf=" element.wifi ; then validCondition else nonValidCondition"></div>
+                <ng-template #validCondition>Oui</ng-template>
+                <ng-template #nonValidCondition>Non</ng-template>
+            </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="clim">
+            <mat-header-cell *matHeaderCellDef>Climatisé</mat-header-cell>
+            <mat-cell *matCellDef="let element"> 
+                <!-- element.clim : true show 'Oui' else show 'Non' -->
+                <!-- ng-template is just an angular element for rendering objects ect... -->
+                <!-- https://angular.io/guide/structural-directives -->
+
+                <div *ngIf=" element.clim ; then validCondition else nonValidCondition"></div>
+                <ng-template #validCondition>Oui</ng-template>
+                <ng-template #nonValidCondition>Non</ng-template>
+
+            </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="actions">
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCellDef="let row">
+                <button mat-icon-button color="primary" (click)="onEdit(row)"><mat-icon>launch</mat-icon></button>
+                <button mat-icon-button color="warn" (click)="onDelete(row.key)"><mat-icon>delete_outline</mat-icon></button>
+            </mat-cell>
+        </ng-container>
+            <ng-container matColumnDef="loading">
+            <mat-footer-cell *matFooterCellDef colspan="6">
+                Loading data...
+            </mat-footer-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':listData!=null}"></mat-footer-row>
+    </mat-table>
+</div>
+</div>

@@ -1,0 +1,211 @@
+<mat-toolbar>
+  <span>Ticket</span>
+  <span class="fill-remaining-space"></span>
+  <button mat-dialog-close class="btn-dialog-close" mat-strocked-button  tabindex="-1"><mat-icon>clear</mat-icon></button>
+</mat-toolbar>
+<form  class="normal-form"  > 
+
+   
+       <div class="container-ticket">
+         <div class="contain">
+           <div class="left-content">
+            <mat-form-field class="example-full-width">
+              <mat-label>Station départ</mat-label>
+              <input matInput [value]="voyage.stationdepart" disabled>
+            </mat-form-field>
+            
+            <mat-form-field class="example-full-width">
+              <mat-label>Station arrivée</mat-label>
+              <input matInput [value]="voyage.stationarrivee" disabled>
+            </mat-form-field> 
+            <mat-form-field class="example-full-width">
+                <mat-label>Tarif place</mat-label>
+                <input matInput [value]="voyage.tarifs" disabled>
+              </mat-form-field>
+            <!--<mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Choose a date</mat-label>
+              <input matInput [matDatepicker]="picker">
+              <mat-datepicker-toggle matSuffix [for]="picker">
+                <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+              </mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field> -->
+            
+          </div>
+        <div class="right-content">
+          <!--   <label class="font"> Passager </label>
+              <div class="add-bottom-padding">  
+                  <mat-radio-group >
+
+                    <mat-radio-button class="display-button" *ngFor="let item of _passagerlist" (change)="onchange()" [(ngModel)]="item.isselected">
+                      {{item.name}}
+                    </mat-radio-button> 
+
+                  </mat-radio-group>
+                  
+
+              </div>    -->
+           
+        
+        <form class="test2"> 
+          <div class="row">
+            <label class="font"> Passager </label>
+          </div>
+
+          <mat-radio-group name="passagerType" [(ngModel)]="pickedPassagerType" (change)="onchange($event)">
+            <mat-radio-button  name="passagerType" class="example-radio-button" *ngFor="let passager of passagerTypes" [value]="passager">
+              {{passager.voyagerType}}
+            </mat-radio-button>
+          </mat-radio-group>
+          
+
+        </form>
+
+              <mat-form-field class="example-full-width">
+                <mat-label>Tarif final</mat-label>
+                <input matInput [value]="finalPrice" disabled> 
+              </mat-form-field>
+
+
+
+
+       </div>
+            
+              
+         
+          </div>
+         
+            <div class="button-row">   
+               <button mat-raised-button color="primary" type="submit" (click)="bookTicket()" >Confirmer</button>
+
+                <button mat-raised-button color="primary" (click)="closeDialog()">Annuler</button>
+            </div>
+ <!--           <mat-cell *matCellDef="let row">
+              <button mat-icon-button  color="primary" (click)="bookTicket(row)" class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+                  <mat-icon>bookmark_add</mat-icon>
+              </button>    
+
+          </mat-cell> -->
+  
+
+
+          </div>
+ 
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- <div class="controles-container">
+          <div class=input>
+              
+         <mat-form-field appearance="fill">
+         <mat-label>station arrivee</mat-label>
+         <mat-select [disabled]="!selectVillearriveeValueEnabled" 
+         (selectionChange)="setAvailablePlace($event)" >
+    
+           <mat-option *ngFor="let voyvilleOption of voyageList" [value]="voyvilleOption.stationarrivee">
+               {{voyvilleOption.stationarrivee }}
+           </mat-option>
+         </mat-select>
+       </mat-form-field>
+         <mat-form-field>
+         <input min="0" max="20" matInput placeholder="Nombre des places disponibles" 
+         [value]="availablePlaces"> 
+        </mat-form-field>
+        <mat-form-field>
+         <input  matInput placeholder="Nombre des places reservées">
+        </mat-form-field>   
+          </div>
+      </div> -->
+        <!--  right content   -->
+      
+  
+ <!-- <div class="contain">
+  <form  class="normal-form"  > 
+    <div style="display: flex;" class="">
+      <div class="left-content">   
+    
+      </div>
+      
+            
+       <div class="controles-container">
+            
+  <div class="right-content">
+    
+    <mat-toolbar>
+      <span>Ticket</span>
+      <span class="fill-remaining-space"></span>
+    </mat-toolbar>
+   
+                <mat-form-field class="example-full-width">
+                  <mat-label>Ville départ</mat-label>
+                  <input matInput>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                  <mat-label>Ville arrivée</mat-label>
+                  <input matInput>
+                </mat-form-field>
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>Choose a date</mat-label>
+                  <input matInput [matDatepicker]="picker">
+                  <mat-datepicker-toggle matSuffix [for]="picker">
+                    <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+                  </mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                <div class="controles">
+                  <label> Passager </label>
+                  <div class="add-bottom-padding">  
+                      <mat-radio-group >
+                          <mat-radio-button [value]="true">Mineur</mat-radio-button>
+                          <mat-radio-button [value]="false">Majeur</mat-radio-button>
+                          <mat-radio-button [value]="false">Handicapé</mat-radio-button>
+                          <mat-radio-button [value]="false">Autre</mat-radio-button>
+                      </mat-radio-group>
+                  </div>
+                  <mat-form-field class="example-full-width">
+                    <mat-label>Prix</mat-label>
+                    <input matInput>
+                  </mat-form-field>
+                  </div>
+           
+                <div class="button-row">
+                    <button mat-raised-button color="primary" type="submit"  >Valider</button>
+                    <button mat-raised-button color="primary" >Annuler</button>
+    
+                </div>
+              </div>  
+             
+        
+       </div> 
+              
+
+ 
+   
+                
+       </div>  
+        
+   
+  </form>
+ 
+     
+  
+</div>      -->
+ 

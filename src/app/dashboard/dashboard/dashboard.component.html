@@ -1,0 +1,274 @@
+<mat-toolbar class="custom-toolbar">
+    <span>Tableau de bord</span>
+    <span class="fill-remaining-space"></span>
+</mat-toolbar>
+
+<div class="contain">
+    <div class="top-contain"> <!-- -->
+        <div class="left-card">
+            <div class="row-1">
+                    <div class="stats-card">
+    
+                        <div class="stats-card-container">
+                        
+                        <div class="information">
+                        
+                            <div class="stats">
+                            
+                            <div class="flying-ryhem">
+                                <span class="material-icons md-9">directions_bus</span>
+                            </div>
+                            
+                            </div>
+                            
+                            <div class="details">
+                            
+                            <label class="label">Véhicules</label>
+                            <div class="description">
+                                {{ vehiculesNumber }}
+                            </div>
+                            
+                            </div>
+                        </div>
+                    
+                       
+                        
+                        </div>
+                    
+                    </div>
+            
+            </div>
+            
+            <div class="row-1">
+                <div class="stats-card">
+    
+                    <div class="stats-card-container">
+                    
+                    <div class="information">
+                    
+                        <div class="stats1">
+                        
+                        <div class="flying-ryhem">
+                            <span class="material-icons md-9">supervisor_account</span>
+                        </div>
+                        
+                        </div>
+                        
+                        <div class="details">
+                        
+                        <label class="label">Chauffeurs</label>
+                        <div class="description">
+                        {{ chauffeursNumber }}
+                        </div>
+                        
+                        </div>
+                    </div>
+                
+                 
+                    
+                    </div>
+                
+                </div>
+        
+            </div>
+             
+            <div class="row-1">
+                <div class="stats-card">
+    
+                    <div class="stats-card-container">
+                    
+                    <div class="information">
+                    
+                        <div class="stats2">
+                        
+                        <div class="flying-ryhem">
+                            <span class="material-icons md-9">stacked_line_chart</span>
+                        </div>
+                        
+                        </div>
+                        
+                        <div class="details">
+                        
+                        <label class="label">Lignes</label>
+                        <div class="description">
+                            {{ lignesNumber }}
+                        </div>
+                        
+                        </div>
+                    </div>
+
+                    
+                    </div>
+                
+                </div>
+        
+            </div>
+            <div class="row-1">
+                <div class="stats-card">
+    
+                    <div class="stats-card-container">
+                    
+                    <div class="information">
+                    
+                        <div class="stats3">
+                        
+                        <div class="flying-ryhem">
+                            <span class="material-icons md-9">departure_board</span>
+                        </div>
+                        
+                        </div>
+                        
+                        <div class="details">
+                        
+                        <label class="label">Voyages</label>
+                        <div class="description">
+                            {{ voyagesNumber }}
+                        </div>
+                        
+                        </div>
+                    </div>
+                
+                    
+                    
+                    </div>
+                
+                </div>
+        
+            </div>
+         </div>
+     
+ 
+ 
+ 
+</div>
+
+
+<div class="bottom-contain"> <!-- -->
+        <div class="test1">
+               <div class="barchart">
+            <div class="chart-wrapper">
+             <canvas baseChart 
+             [datasets]="barChartData"
+             [labels]="barChartLabels"
+             [options]="barChartOptions"
+             [plugins]="barChartPlugins"
+             [legend]="barChartLegend"
+             [chartType]="barChartType" [colors]="barChartColors">
+           </canvas>
+            </div>
+         </div>   
+        </div>
+        <div class="test2"> 
+            <div class="doughnutChar">
+                 <div class="chart-wrapper">
+                 <canvas baseChart 
+                 [data]="doughnutChartData"
+                 [labels]="doughnutChartLabels"
+                 [chartType]="doughnutChartType" [colors]="doughnutChartColors"
+                 >
+               </canvas>
+             </div> 
+              </div>
+             </div> 
+</div>
+</div>
+<!-- 
+<div class="test2"> 
+            <div class="doughnutChar">
+                 <div class="chart-wrapper">
+                 <canvas baseChart 
+                 [data]="doughnutChartData"
+                 [labels]="doughnutChartLabels"
+                 [chartType]="doughnutChartType" [colors]="doughnutChartColors"
+                 >
+               </canvas>
+             </div> 
+              </div>
+             </div> 
+
+-->       
+    
+<!--   <div class="test2"> 
+       <div class="doughnutChar">
+            <div class="chart-wrapper">
+            <canvas baseChart 
+            [data]="doughnutChartData"
+            [labels]="doughnutChartLabels"
+            [chartType]="doughnutChartType" [colors]="doughnutChartColors"
+            >
+          </canvas>
+        </div> 
+         </div>
+        </div> -->
+
+
+
+
+        <!--  
+            <div class="card-container">
+      <div class="card">
+                <button routerLink="/home/dashboard" class="button button1" ><span class="material-icons">grid_view</span>Tableau de bord</button>
+            </div>
+            <div class="card">
+                <button routerLink="/home/bus" class="button button2"><span class="material-icons">directions_bus</span>Gestion des véhicules</button>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card">
+                <button routerLink="/home/chauffeur" class="button button3"><span class="material-icons">supervisor_account</span>Gestion des chauffeurs</button>
+            </div>
+            <div class="card">
+                <button routerLink="/home/ligne" class="button button4"><span class="material-icons" aria-hidden="true">stacked_line_chart</span>Gestion des lignes</button>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card">
+                <button routerLink="/home/voyage"class="button button5"><span class="material-icons">departure_board</span>Gestion des voyages</button>
+            </div>
+        </div> -->
+      
+        <!--  
+ -->
+       <!--       <div class="chart-wrapper">
+            <canvas baseChart 
+                [datasets]="lineChartData" 
+                [labels]="lineChartLabels" 
+                [options]="lineChartOptions"
+                [colors]="lineChartColors" 
+                [legend]="lineChartLegend" 
+                [chartType]="lineChartType" 
+                [plugins]="lineChartPlugins">
+            </canvas>
+        </div> -->
+
+  
+        <!--  right content   -->
+  
+
+ <!--
+        <div class="label1">
+            <div class="info1">
+            <span class="material-icons" aria-hidden="true">stacked_line_chart</span>
+           <div class="text">Les lignes </div> 
+            </div>
+        </div>
+        <div class="label2">
+            <div class="info2">
+            <span class="material-icons">departure_board</span>
+            <div class="text">Les voyages  </div> 
+            </div>
+        </div>
+        <div class="label3">
+            <div class="info3">
+            <span class="material-icons">timer</span>
+            <div class="text">Les chauffeurs </div> 
+        </div>
+        <div class="right-content"> 
+           
+    </div>  -->
+   
+
+
+

@@ -1,0 +1,49 @@
+ <!-- *ngIf="!onSignin || true " 
+<div>
+  <h2>Sign up</h2>
+  <input type="text" #emailSignup />
+  <input type="text" #passwordSignup />
+  <button (click)="onSignup(emailSignup.value,passwordSignup.value)">Sign up</button>
+
+
+
+  <button (click)="getUserFirestore('GdW5DWPWAfPTHkRQUZcqCgSbPQv2')">Getting user from firestore</button>
+
+</div> 
+-->
+ 
+<!-- <div >
+  <h2>Sign In</h2>
+  <input type="text" #email />
+  <input type="text" #password />
+  <button (click)="onSignin(email.value , password.value)">Sign in</button>
+</div>  -->
+
+<!--    -->
+
+<div class="login-form">
+
+<form>
+  <div class="imgcontainer">
+    <img src="assets/img/avatar.jpg" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+    <label for="uname"><b>Nom d'utilisateur</b></label>
+    <input type="text" #email placeholder="Saisir votre nom d'utilisateur" name="uname" required>
+
+    <label for="psw"><b>Mot de passe</b></label>
+    <input type="password" #password placeholder="Saisir votre Mot de passe" name="psw" required>
+      
+    <button (click)="onSignin(email.value , password.value)" >Connexion</button>
+    
+    <div *ngIf="dataLoader" class="connection-loader">
+      <mat-spinner [diameter]="20" [strokeWidth]="3" ></mat-spinner>
+    </div>
+
+  </div>
+</form>
+
+</div>
+
+

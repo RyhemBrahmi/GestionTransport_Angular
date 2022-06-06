@@ -1,0 +1,73 @@
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="{{ nabvarMode }}" opened=" {{ showFiller }}" >
+  
+  
+  
+       <!--<i class="fas fa-user"></i> uses solid style -->
+       <div class="side-nav-container" > 
+        
+      <div class="titre">
+        <!-- <span> <i class="fa fa-user fa-5x"></i></span>-->
+        <span class="material-icons md-90">
+          admin_panel_settings
+          </span>
+          <p class="style-logo"></p>
+      </div>
+       
+       <div class="e">
+       <div class="bn-group">   
+        <button routerLink="/home/dashboard" class="button" routerLinkActive="active-link"><span class="material-icons">grid_view</span>Tableau de bord</button> 
+        <button routerLink="/home/bus" class="button" routerLinkActive="active-link"><span class="material-icons">directions_bus</span>Gestion des véhicules</button> 
+        <button routerLink="/home/chauffeur" class="button" routerLinkActive="active-link"><span class="material-icons">supervisor_account</span>Gestion des chauffeurs</button> 
+        <button routerLink="/home/ligne" class="button" routerLinkActive="active-link"><span class="material-icons" aria-hidden="true">stacked_line_chart</span>Gestion des lignes</button> 
+        <button routerLink="/home/voyage" class="button" routerLinkActive="active-link"><span class="material-icons">departure_board</span>Gestion des voyages</button> 
+        <button routerLink="/home/planning" class="button" routerLinkActive="active-link"><span class="material-icons">timer</span>Horaires et tarifs</button> 
+
+        <!-- </mat-list-item>  -->
+<!--        <button routerLink="/home/station" class="button" routerLinkActive="active-link"><span class="material-icons">departure_board</span>Stations</button>
+ -->
+    </div>
+    
+    </div>
+    <!--
+      <a routerLink="/item2" routerLinkActive="active-link">User Detail</a>
+      <a routerLink="/item1" routerLinkActive="active-link">User Detail</a>
+      -->
+     </div>
+     
+    </mat-drawer>
+  
+    <mat-toolbar  class="toolbar">
+  
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" mat-button (click)="drawer.toggle()" >
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span></span>
+    <span class="example-spacer"></span>
+    <!-- #docregion mat-menu-trigger-for -->
+    <div class="imgcontainer">
+      <img src="assets/img/avatar.jpg" alt="Avatar" class="avatar">
+    </div>
+  
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+<!-- #enddocregion mat-menu-trigger-for -->
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="logout()" class="menu-button"><span class="material-icons">logout</span> Déconnexion
+    </button>
+
+</mat-menu>
+
+  <!--  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button> -->  
+   
+  </mat-toolbar>
+  <div class="router">
+     <router-outlet></router-outlet>
+  </div>
+   
+  
+  
+  </mat-drawer-container>

@@ -1,0 +1,100 @@
+.custom-toolbar {
+    background-color:#f7f8fc;
+    //font-family:'Courier New', Courier, monospace;
+    font-size:xx-large;
+    //font-weight: bolder;
+}
+.planning{
+   font-size:medium; 
+
+}
+.ticket{
+   
+        color:	rgb(117, 22, 22);
+
+}
+.button{
+    background-color:  #3f51b5; //#275d71;
+    color: #fff;
+    //font-weight: 50;
+    //padding: 1px;
+}
+.button:hover{
+    background-color: #3747a9 !important;
+}
+.buttonStation{
+ 
+    background-color:  #fff; 
+    border: none;
+    color: rgb(24, 22, 22);
+    padding: 6px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+
+}
+.buttonStation:hover {
+background-color: #3f51b5 !important;
+color: #fff;
+}
+
+.search-div1{
+    margin: 10px;
+}
+.search-form-field{
+    width: 50%;
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: white;
+    border-radius: 5px;
+    margin: 5px;
+}
+.search-form-field div.mat-form-field-underline{
+    display: none;
+}
+.search-form-field div.mat-form-field-infix{
+    border-top: 0px;
+}
+.search-form-field div.mat-form-field-wrapper{
+    padding-bottom: 0px;
+}
+.search-form-field div.mat-form-field-suffix button{
+    height: 32px;
+    width: 32px;
+}
+.button-create{
+    background-color:  #3f51b5; //#275d71;
+    color: #fff;
+    font-weight: 500;
+    margin: 5px;
+}
+.button-create:hover{
+    background-color: #3747a9 !important;
+}
+.margin-date{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.buttonStation{
+ 
+    background-color:  #fff; 
+    border: none;
+    color: rgb(24, 22, 22);
+    padding: 6px 6px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+
+}
+.buttonStation:hover {
+background-color: #3f51b5 !important;
+color: #fff;
+}

@@ -1,0 +1,90 @@
+
+.nav {
+    //background-color: yellow; 
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav li {
+    display: list-item;
+    font-size: 15px;
+    padding: 15px;
+    background-color: brown;
+  }
+
+
+
+  .ticket{
+    background-color:#3f51b5;
+   // width: 100%;
+    border-radius: 10px ; 
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px 5px;
+    //display: inline-block;
+    margin-top: 10px;
+  }
+  table {
+    width: 100%;
+  }
+  .ligne{
+    margin-top: 10px;
+  }
+  .station{
+    font-size: 15px;
+  }
+
+
+  .example-container {
+    height: 400px;
+    width: 550px;
+    max-width: 100%;
+    overflow: auto;
+  }
+  
+  table {
+    width: 800px;
+  }
+  
+  mat-cell.mat-column-star {
+    width: 20px;
+    padding-right: 8px;
+  }
+  
+  mat-header-cell .mat-column-position, td.mat-column-position {
+    padding-left: 8px;
+  }
+  
+  .mat-table-sticky-border-elem-right {
+    border-left: 1px solid #e0e0e0;
+  }
+  
+  .mat-table-sticky-border-elem-left {
+    border-right: 1px solid #e0e0e0;
+  }
+  .search-div1{
+    margin: 10px;
+}
+.search-form-field{
+    width: 100%;
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: rgba(221, 226, 247, 0.856);
+    border-radius: 5px;
+    margin: 5px;
+}
+.search-form-field div.mat-form-field-underline{
+    display: none;
+}
+.search-form-field div.mat-form-field-infix{
+    border-top: 0px;
+}
+.search-form-field div.mat-form-field-wrapper{
+    padding-bottom: 0px;
+}
+.search-form-field div.mat-form-field-suffix button{
+    height: 32px;
+    width: 32px;
+}

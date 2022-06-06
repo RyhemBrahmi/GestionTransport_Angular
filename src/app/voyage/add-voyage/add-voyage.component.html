@@ -1,0 +1,134 @@
+<mat-toolbar>
+    <span>{{service.form.controls['key'].value?"Modifier":"Ajouter"}}</span>
+    <span class="fill-remaining-space"></span>
+    <button class="btn-dialog-close" mat-strocked-button (click)="onClose($event)" tabindex="-1"><mat-icon>clear</mat-icon></button>
+</mat-toolbar>
+<form [formGroup]="service.form" class="normal-form" (ngSubmit)="onSubmit()" > 
+    <div style="display: flex;" class="">
+       <div class="controles-container">
+           <div class=input>
+               <input type="hidden" formControlName="key"> 
+              
+            
+               <mat-form-field appearance="fill">
+                <mat-label>Voyage parent</mat-label>
+                <mat-select formControlName="voyageParent" [disabled]="!selectVoyageValueEnabled"  (selectionChange)="selectedOption($event)">
+                    <!-- setLigneValue(busLignOption.villedepart,busLignOption.villearrivee) -->
+                    <ng-container *ngFor="let element of voyagesList"> 
+                      
+                      <mat-option [value]="element.key" *ngIf="element.voyageParent.length == 0">
+                        {{ element.stationdepart }} - {{ element.stationarrivee }} - {{ element.matriculebus}} 
+                      </mat-option>
+                      
+                    </ng-container>
+                     
+                </mat-select>
+
+              </mat-form-field>
+              <mat-form-field appearance="fill">
+                <mat-label>ligne</mat-label>
+                <mat-select formControlName="ligne" [disabled]="!selectLigneValueEnabled"  >
+                 
+                  <mat-option *ngFor="let busLignOption of ligneList" [value]="setLigneValue(busLignOption.villedepart,busLignOption.villearrivee)" >
+                     {{ busLignOption.villedepart }} - {{ busLignOption.villearrivee }}
+                  </mat-option>
+                </mat-select>
+
+              </mat-form-field> 
+<!--    -->
+           
+                <!-- setLigneValue(busLignOption.villedepart,busLignOption.villearrivee) -->
+              <!--    <mat-form-field>
+                <input formControlName="ligne" matInput placeholder="Ligne">
+               </mat-form-field>
+               <mat-form-field>
+                <input formControlName="stationdepart" matInput placeholder="Station départ">
+               </mat-form-field>
+               <mat-form-field>
+                <input formControlName="stationarrivee" matInput placeholder="Station arrivée">
+               </mat-form-field>-->
+
+               <mat-form-field appearance="fill">
+                <mat-label>Station Départ</mat-label>
+                <mat-select formControlName="stationdepart">
+                  <mat-option *ngFor="let food of foodss" [value]="food.value">
+                    {{food.viewValue}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field appearance="fill">
+                <mat-label>Station Arrivée</mat-label>
+                <mat-select formControlName="stationarrivee">
+                  <mat-option *ngFor="let food of foods" [value]="food.value">
+                    {{food.viewValue}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              
+               <mat-form-field>
+                <input formControlName="heuredepart" matInput placeholder="Heure départ">
+                <mat-error>Ce champ est obligatoire</mat-error>
+               </mat-form-field>
+                <mat-form-field>
+                <input formControlName="heurearrivee" matInput placeholder="Heure d'arrivée">
+                <mat-error>Ce champ est obligatoire</mat-error>
+               </mat-form-field>
+
+
+               <!-- 
+                <mat-form-field>
+                    <input formControlName="matriculebus" matInput placeholder="Matricule bus">
+                </mat-form-field>
+               -->
+               
+            </div>
+        </div> 
+        <div class="controles-container">
+            <div class=input>
+              <mat-form-field> <!-- chbaha khademt hhhh wlh masdouma badeltha alf marra lesm kol marra ytelbas hh behi maw fhetha hadhi ifech ? ki theb ta9raha l from lazem l formcontrolname ykoun mawjoud fel initilization mta3 l form hy movh kont     aamletha akeeka ???, kont 3amla fel rom date, w fel html dahhh eyyy maw aamlthom lkol date mamchetch aamlthom lkol date resvation mamchetch aamlat nos nos mchet jarebthom lkol , akid thama haja snitaha, l hsael haya jarbi, lahdha chbik kif taaml ajout mtokhrejch kif to9res aal button ?khater 3amine return xd , haya nahiha taw tet3ada l ajout,  -->
+                <input formControlName="dateVoyage" matInput [matDatepicker]="picker" placeholder="Date">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+                <!--          <mat-form-field>
+                    <input formControlName="distance" matInput placeholder="Distance">
+                </mat-form-field>  -->
+     
+                <mat-form-field appearance="fill">
+                  <mat-label>Matricule bus</mat-label>
+                  <mat-select formControlName="matriculebus" [disabled]="!selectMatriculeValueEnabled" 
+                  (selectionChange)="setAvailablePlace($event)" >
+  
+                    <mat-option *ngFor="let busMatOption of busList" [value]="busMatOption.numS">
+                        <!--  {{ busMatOption.marque }} - {{ busMatOption.modele }}- -->
+                        {{ busMatOption.numS }}
+                    </mat-option>
+                  </mat-select>
+  
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input formControlName="tarifs" matInput placeholder="Tarif(DT)">
+                    <mat-error>Ce champ est obligatoire</mat-error>
+                </mat-form-field>
+                 <mat-form-field>
+                 <input formControlName="nombreplacedisponible" min="0" max="20" matInput placeholder="Nombre des places disponibles" 
+                 [value]="availablePlaces" > 
+                </mat-form-field>
+                <mat-form-field>
+                 <input formControlName="nombreplacereservee" matInput placeholder="Nombre des places reservées">
+                </mat-form-field>
+                
+             </div>
+         </div> 
+            
+            <div class="controles-container">
+              <div class="button-row">
+                  <button mat-raised-button color="primary" type="submit" [disabled]="service.form.invalid" >Valider</button>
+                  <button mat-raised-button color="primary" (click)="onClose($event)">Annuler</button>
+
+              </div>
+            </div>  
+        
+        </div>
+</form>

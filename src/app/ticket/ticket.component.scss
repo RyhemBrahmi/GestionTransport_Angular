@@ -1,0 +1,100 @@
+.contain {
+    width: 100%;
+    display: flex;
+  }
+  
+  .contain .left-content {
+    //background-color: red;
+    width: 40%;
+    margin-top: 10px;
+  }
+  
+  .contain .left-content .input-container {
+     width: 100%;
+     display: flex;
+  }
+  
+  .contain .left-content .card-container .card{
+     width: 100%; 
+     background-color: rgb(96, 99, 99);
+  }
+  
+  .contain .left-content .card-container .card button {
+    width: 100%;
+  }
+  
+  .contain .right-content {
+   //background-color: rgb(223, 223, 223);
+    width: 60%;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .contain .left-content .card-container {
+        display: block;
+    }
+    }
+    .contain {
+      width: 100%;
+      display: flex;
+  }
+  
+  .contain .left-content {
+     //background-color: red;
+      width: 40%;
+  }
+  
+  .contain .left-content .card-container {
+       width: 100%;
+       display: flex;
+  }
+  
+  .contain .left-content .card-container .card{
+       width: 100%; 
+       //background-color: rgb(64, 75, 75);
+  }
+  
+  .contain .left-content .card-container .card button {
+      width: 100%;
+  }
+  
+  .contain .right-content {
+      //background-color: rgb(223, 223, 223);
+      width: 60%;
+  }
+  
+  @media only screen and (max-width: 600px) {
+      .contain .left-content .card-container {
+          display: block;
+      }
+      }
+  
+
+
+//container-ticket
+.container-ticket{
+  //background-color: blue;
+  padding:1px;
+}
+
+.display-button{
+  display: block;
+  //background-color: blue;
+}
+
+//passager
+
+.font{
+  //background-color: blue;
+  font-size: 17px;
+}
+
+.test1{
+  //background-color: chartreuse;
+  width: 30px;
+}
+//.test2{
+  //background-color: crimson;
+  //margin-left: 10px;}
+  .example-radio-button{
+    display: flex;
+  }

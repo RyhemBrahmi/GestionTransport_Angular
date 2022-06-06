@@ -1,0 +1,164 @@
+.example-container {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #bd8cbf4a;
+    background-color: #f7f8fc;
+  }
+  
+  .example-sidenav-content {
+    display: flex;
+    //height: 100%;
+    //align-items: center;
+    justify-content: flex-start;
+    height: 10px;
+  }
+  
+  .example-sidenav {
+    //padding: 20px;
+    width: 245px;
+    background-color: #3f51b5;
+    
+  }
+
+  
+
+  //exemple
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+
+  //item
+  .item {
+    background-color: #bd8cbf4a;
+    color: white;
+    border: 2px solid #555555;
+    font-size: 16px;
+    margin: 4px 2px;
+    
+  }
+  .item:hover {
+    background-color: #555555;
+    color: white;
+  }
+
+  .bn-group {
+    padding: 6px;
+  }
+
+  //button
+  .bn-group .button {
+    padding: 15px 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 13px;
+    cursor: pointer;
+    display: flex !important ; 
+    align-items: center;
+    width: 100%;
+    border-radius: 10px;
+    flex-direction: row;
+    outline: none;
+    border: none;
+    background-color: #3f51b5;     //#275d71;
+    margin-bottom: 5px;
+    color: white;
+    /* font-family: "Courier New", Courier, monospace; */
+    font-weight: 500;
+    transition: all 0.1s; // hadhi bech twali thaam smooth trnasiton
+  }
+  .bn-group .button span{
+      width: 55px;
+  }
+    
+  
+  
+  //.btn-group .button:not(:last-child) {
+  //  border-bottom: none; /* Prevent double borders */
+ // }
+  
+  .bn-group .button:hover {
+    background-color:  #3747a9 !important; //#1c4d5f
+    transition: all 0.1s;
+  }
+
+  //icon bus
+  .material-icons.md-48 { font-size: 48px; 
+    font-size: 20 px;
+    color:	white;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 0%;
+  }
+//titre
+.titre{
+  font-weight: bold;
+  color:	white;
+  border-radius:300px 300px 600px 600px;
+  //background-color: #9b1e1e24;
+  height: 89%;
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  //margin-left: 0%;
+
+}
+/*.side-nav-container{
+  border-radius:40px;
+   background-color: #8bd0d24a;
+    height: 100%;
+    width: 100%;
+   
+}*/
+.e{
+  margin-top: 20px;
+  margin-bottom: 100px;
+}
+
+.toolbar{
+  background-color: #f7f8fc;
+
+}
+  
+
+
+.active-link{
+  background-color: #3747a9 !important; //#1c4d5f
+  color: black;
+  }
+
+  .style-logo{
+    font-family:'Courier New', Courier, monospace;
+    font-size:x-large;
+   
+  }
+  .imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+  }
+  
+  img.avatar {
+    width: 45px;
+    border-radius: 50%;
+    margin-top: -10px;
+  }
+
+  .menu-button {
+    display: flex;
+    align-items: center;
+  } 
+  
+  .menu-button .material-icons {
+    margin-right: 5px;
+  }
+ .bn-group.material-icons{
+   width: 20px;
+ }
+
+.material-icons.md-90 { font-size: 90px; }
+.router{
+  //background-color: black;
+  width:99%;
+}

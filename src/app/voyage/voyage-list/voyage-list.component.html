@@ -1,0 +1,94 @@
+<div class="liste">
+    <div class="search-div">
+        <button mat-raised-button (click)="onCreate()" class="button-create">
+            <mat-icon>add</mat-icon> Ajouter
+        </button>
+        
+        <mat-form-field class="search-form-field" floatLabel="never">
+    <input matInput [(ngModel)]="searchkey" placeholder="Chercher" autocomplete="off" (keyup)="applyFilter()">
+    <button mat-button matSuffix mat-icon-button aria-label="Clear"*ngIf="searchkey" (click)="onSearchClear()">
+        <mat-icon>close</mat-icon>
+    </button>
+        </mat-form-field>
+    </div>
+
+
+    <div class="mat-elevation-z8" >
+        <mat-table [dataSource]="listData" class="table">
+            <!--  <ng-container matColumnDef="voyageParent">
+                <mat-header-cell *matHeaderCellDef class="ligne1">Parent ligne</mat-header-cell >
+                <mat-cell *matCellDef="let element" class="ligne1">{{element.voyageParent}}</mat-cell>
+            </ng-container> -->
+          
+            <ng-container matColumnDef="ligne">
+                <mat-header-cell *matHeaderCellDef class="ligne1">Ligne</mat-header-cell>
+                <mat-cell *matCellDef="let element" class="ligne1"> {{element.ligne}} </mat-cell>
+            </ng-container>
+            <!--  
+                 <ng-container matColumnDef="stationdepart">
+                <mat-header-cell *matHeaderCellDef>Station départ</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.stationdepart}}</mat-cell>
+            </ng-container>
+            -->
+           
+            <ng-container matColumnDef="heuredepart">
+                <mat-header-cell *matHeaderCellDef>Heure départ</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.heuredepart}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="stationarrivee">
+                <mat-header-cell *matHeaderCellDef>Station arrivée</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.stationarrivee}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="heurearrivee">
+                <mat-header-cell *matHeaderCellDef>Heure arrivée</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.heurearrivee}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="dateVoyage">
+                <mat-header-cell *matHeaderCellDef>Date</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.dateVoyage | date: 'yyyy-MM-dd'}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="matriculebus">
+                <mat-header-cell *matHeaderCellDef>Matricule bus</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.matriculebus}}</mat-cell>
+            </ng-container>
+         
+            <!--<ng-container matColumnDef="distance">
+                <mat-header-cell *matHeaderCellDef>Distance</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.distance}}</mat-cell>
+            </ng-container> --> 
+           
+            <ng-container matColumnDef="tarifs">
+                <mat-header-cell *matHeaderCellDef>Tarifs</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.tarifs}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="nombreplacedisponible">
+                <mat-header-cell *matHeaderCellDef>Nombre Des places disponibles</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.nombreplacedisponible}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="nombreplacereservee">
+                <mat-header-cell *matHeaderCellDef>Nombre des places reservées</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.nombreplacereservee}}</mat-cell>
+            </ng-container>
+           
+            <ng-container matColumnDef="actions">
+                <mat-header-cell *matHeaderCellDef></mat-header-cell>
+                <mat-cell *matCellDef="let row">
+<!--<button mat-icon-button (click)="bookTicket(row)" class="example-icon favorite-icon" aria-label="Example icon-button with heart icon"><mat-icon>bookmark_add</mat-icon></button>
+ -->
+                    <button mat-icon-button color="primary" (click)="onEdit(row)"><mat-icon>launch</mat-icon></button>
+                    <button mat-icon-button color="warn" (click)="onDelete(row.key)"><mat-icon>delete_outline</mat-icon></button>
+ 
+                </mat-cell>
+            </ng-container>
+                <ng-container matColumnDef="loading">
+                <mat-footer-cell *matFooterCellDef colspan="6">
+                    Loading data...
+                </mat-footer-cell>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+            <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':listData!=null}"></mat-footer-row>
+        </mat-table>
+
+    </div>       
+    </div>

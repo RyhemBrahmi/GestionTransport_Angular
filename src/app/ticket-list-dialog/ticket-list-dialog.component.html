@@ -1,0 +1,53 @@
+<mat-toolbar>
+  <div class="titre">
+    <div class="ligne">
+          <span>{{ voyageData.ligne }}</span>
+    </div>
+
+    <!--<div class="station">
+       <label> {{ voyageData.stationdepart }} - {{ voyageData.stationarrivee }}  </label> 
+    </div> -->
+    
+  </div>
+    <span class="fill-remaining-space"></span>
+    <button mat-dialog-close class="btn-dialog-close" mat-strocked-button  tabindex="-1"><mat-icon>clear</mat-icon></button>
+</mat-toolbar>
+<div class="search-div1">
+  <mat-form-field class="search-form-field" floatLabel="never">
+     <input matInput [(ngModel)]="searchkey" placeholder="Chercher" autocomplete="off" (keyup)="applyFilter()">
+     <button mat-button matSuffix mat-icon-button aria-label="Clear"*ngIf="searchkey" (click)="onSearchClear()">
+          <mat-icon>close</mat-icon>
+     </button> 
+   </mat-form-field>
+</div>
+<div class="tickets">
+    <div class="ticket-information">
+        <h2> </h2>
+    </div>
+</div> 
+
+
+<div class="example-container mat-elevation-z8">
+<mat-table  [dataSource]="dataSource" >
+   
+  <ng-container matColumnDef="passager">
+    <mat-header-cell *matHeaderCellDef>  Passager </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.ticket.clientData.voyagerType}} </mat-cell>
+  </ng-container>
+   <!-- Ticket Id Column -->
+    <ng-container matColumnDef="ticketId">
+      <mat-header-cell *matHeaderCellDef> Ticket Id </mat-header-cell>
+      <mat-cell *matCellDef="let element">  {{element.ticketId}}</mat-cell>
+    </ng-container> 
+
+   
+  
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    
+  </mat-table>
+  
+</div>
+
+
+ 

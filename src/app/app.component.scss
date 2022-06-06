@@ -1,0 +1,133 @@
+.example-container {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #bd8cbf4a;
+    background-color: #f7f8fc;
+  }
+  
+  .example-sidenav-content {
+    display: flex;
+    height: 100%;
+    //align-items: center;
+    justify-content: flex-start;
+    height: 10px;
+  }
+  
+  .example-sidenav {
+    //padding: 20px;
+    width: 250px;
+    background-color: #5764ff;
+    
+  }
+
+  
+
+  //exemple
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+
+  //item
+  .item {
+    background-color: #bd8cbf4a;
+    color: white;
+    border: 2px solid #555555;
+    font-size: 16px;
+    margin: 4px 2px;
+    
+  }
+  .item:hover {
+    background-color: #555555;
+    color: white;
+  }
+
+  .btn-group {
+    padding: 6px;
+  }
+
+  //button
+  .btn-group .button {
+    padding: 15px 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 13px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-radius: 10px;
+    flex-direction: row;
+    outline: none;
+    border: none;
+    background-color: #5764ff;
+    margin-bottom: 5px;
+    color: white;
+    /* font-family: "Courier New", Courier, monospace; */
+    font-weight: 500;
+  }
+    .btn-group .button span {
+      width: 55px;
+  }
+  
+  //.btn-group .button:not(:last-child) {
+  //  border-bottom: none; /* Prevent double borders */
+ // }
+  
+  .btn-group .button:hover {
+    background-color: #575cff !important;
+  }
+
+  //icon bus
+  .material-icons.md-48 { font-size: 48px; 
+    font-size: 20 px;
+    color:	white;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 0%;
+  }
+//titre
+.titre{
+  font-weight: bold;
+  color:	white;
+  border-radius:300px 300px 600px 600px;
+  //background-color: #9b1e1e24;
+  height: 89%;
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  //margin-left: 0%;
+
+}
+/*.side-nav-container{
+  border-radius:40px;
+   background-color: #8bd0d24a;
+    height: 100%;
+    width: 100%;
+   
+}*/
+.e{
+  margin-top: 40px;
+  margin-bottom: 100px;
+}
+
+.toolbar{
+  background-color: #f7f8fc;
+}
+  
+
+
+.active-link{
+  background-color: #6c73ff !important;
+  color: black;
+  }
+
+  .style-logo{
+    font-family:'Courier New', Courier, monospace;
+    font-size:x-large;
+   
+  }
+  
+  

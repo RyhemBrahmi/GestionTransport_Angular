@@ -1,0 +1,35 @@
+<mat-toolbar>
+    <span>Ticket</span>
+    <span class="fill-remaining-space"></span>
+    <button mat-dialog-close class="btn-dialog-close" mat-strocked-button  tabindex="-1"><mat-icon>clear</mat-icon></button>
+</mat-toolbar>
+<div class="box" id="contentToConvert">
+    <div class='inner'>
+    <h1> {{ ticketData.ligneData.ligne }} </h1>
+    <div class='info clearfix'>  
+      <div class='wp'> Passager <h2> {{ ticketData.ticket.clientData.voyagerType }} </h2></div> 
+       
+      <div class='wp'>Date voyage <h2>{{ ticketData.ligneData.dateVoyage | date:'d/M/yy h:mm a' }}</h2></div>
+      
+      <div class='wp'>Heure départ <h2>{{ ticketData.ligneData.heuredepart }}</h2></div>
+
+      <div class='wp'>Station arrivée <h2>{{ ticketData.ligneData.stationarrivee }}</h2></div>
+ <!--  <div class='wp'>ticketId <h2>{{ ticketData.ticketId }}</h2></div>-->
+
+    </div>
+    
+    <div class='total clearfix'>
+      <h2>Tarif final : <p>$ {{ ticketData.ticket.price }}</p></h2>
+    </div>
+
+    <div class='total clearfix1'>
+      <h2>Ticket Id : <p>{{ ticketData.ticketId }}</p></h2>
+    </div>
+
+    </div>
+  </div>
+  <div class="button">
+      <button mat-raised-button  class="button-imprimer" (click)="convertToPDF()">
+        Télécharger Ticket
+    </button>
+  </div>
